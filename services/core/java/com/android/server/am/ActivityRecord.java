@@ -1210,7 +1210,7 @@ final class ActivityRecord {
             if (TaskPersister.DEBUG) Slog.d(TaskPersister.TAG,
                         "ActivityRecord: attribute name=" + attrName + " value=" + attrValue);
             if (ATTR_ID.equals(attrName)) {
-                createTime = Long.valueOf(attrValue);
+                createTime = Long.parseLong(attrValue);
             } else if (ATTR_LAUNCHEDFROMUID.equals(attrName)) {
                 launchedFromUid = Integer.valueOf(attrValue);
             } else if (ATTR_LAUNCHEDFROMPACKAGE.equals(attrName)) {
@@ -1218,7 +1218,7 @@ final class ActivityRecord {
             } else if (ATTR_RESOLVEDTYPE.equals(attrName)) {
                 resolvedType = attrValue;
             } else if (ATTR_COMPONENTSPECIFIED.equals(attrName)) {
-                componentSpecified = Boolean.valueOf(attrValue);
+                componentSpecified = Boolean.parseBoolean(attrValue);
             } else if (ATTR_USERID.equals(attrName)) {
                 userId = Integer.valueOf(attrValue);
             } else if (attrName.startsWith(TaskDescription.ATTR_TASKDESCRIPTION_PREFIX)) {

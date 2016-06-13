@@ -684,6 +684,9 @@ public class TelephonyManager {
      */
     public static final String VVM_TYPE_CVVM = "vvm_type_cvvm";
 
+    /** {@hide} */
+    public static final String EMR_DIAL_ACCOUNT = "emr_dial_account";
+
     //
     //
     // Device Info
@@ -4636,7 +4639,7 @@ public class TelephonyManager {
      */
     public boolean getSmsReceiveCapableForPhone(int phoneId, boolean defaultValue) {
         if (SubscriptionManager.isValidPhoneId(phoneId)) {
-            return Boolean.valueOf(TelephonyManager.getTelephonyProperty(phoneId,
+            return Boolean.parseBoolean(TelephonyManager.getTelephonyProperty(phoneId,
                     TelephonyProperties.PROPERTY_SMS_RECEIVE, String.valueOf(defaultValue)));
         }
 
@@ -4667,7 +4670,7 @@ public class TelephonyManager {
      */
     public boolean getSmsSendCapableForPhone(int phoneId, boolean defaultValue) {
         if (SubscriptionManager.isValidPhoneId(phoneId)) {
-            return Boolean.valueOf(TelephonyManager.getTelephonyProperty(phoneId,
+            return Boolean.parseBoolean(TelephonyManager.getTelephonyProperty(phoneId,
                     TelephonyProperties.PROPERTY_SMS_SEND, String.valueOf(defaultValue)));
         }
 
